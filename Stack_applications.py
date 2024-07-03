@@ -3,15 +3,13 @@ class Solution:
                 #if list has less than 3 elements , return false
         if len(nums) < 3:
               return False
+      
+        stack = []   #initialize an empty stack to store elements
+        min_arr = [0] * len(nums) #array to store min value up yo each index
+        min_arr[0] = nums [0] #initialize the first element of min_arr
         
-        #initialize an empty stack to store elements
-        stack = []   
-        #array to store min value up yo each index
-        min_arr = [0] * len(nums)
-        #initialize the first element of min_arr
-        min_arr[0] = nums [0]
-        # Fill min_arr with the minimum value encountered up to each index
-        for i in range(1, len(nums)):
+        
+        for i in range(1, len(nums)): # Fill min_arr with the minimum value encountered up to each index
             min_arr[i] = min(min_arr[i-1], nums[i])
         
         
